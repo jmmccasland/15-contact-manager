@@ -1,21 +1,7 @@
 // Contact Form
 
 .contact-form {
-  display: flex;
-  flex-direction: column;
   padding: 1rem;
-
-
-  > .control {
-    display: flex;
-    flex-direction: column;
-    margin: 0 0 1rem;
-
-    > input {
-      height: 2rem;
-      outline: none;
-    }
-  }
 
   &__submit {
     position: absolute;
@@ -27,7 +13,25 @@
     border: 0;
     outline: none;
     background: $c-darkseagreen;
-    color: $c-whitesmoke;
+    color: $c-white;
     font-size: 1rem;
+  }
+}
+
+.control {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 1rem;
+
+  > input {
+    height: 2rem;
+    border: 0;
+    border-bottom: 0.1rem solid $c-grey;
+    outline: none;
+    background: $c-aliceblue;
+
+    &:focus {
+      border-bottom: 0.3rem solid lighten($c-darkseagreen, 10%);
+    }
   }
 }
