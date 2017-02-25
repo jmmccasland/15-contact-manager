@@ -1,0 +1,30 @@
+// Card Styles
+
+.card {
+  border: 0.1rem solid $c-grey;
+  border-radius: 0.3rem;
+  background: $c-white;
+
+  &-info {
+    padding: 1rem;
+
+    &__full-name {
+      margin: 0;
+    }
+
+    > * + * {
+      margin: 1rem 0 0;
+    }
+  }
+
+  &__delete {
+    width: 100%;
+    height: 3rem;
+    margin: 0;
+    border: 0;
+    outline: none;
+    background: $c-tomato;
+    color: $c-whitesmoke;
+    font-size: 1rem;
+  }
+}
