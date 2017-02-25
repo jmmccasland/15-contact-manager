@@ -1,0 +1,33 @@
+// Contact Form
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+
+
+  > .control {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 1rem;
+
+    > input {
+      height: 2rem;
+      outline: none;
+    }
+  }
+
+  &__submit {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4rem;
+    margin: 0;
+    border: 0;
+    outline: none;
+    background: $c-darkseagreen;
+    color: $c-whitesmoke;
+    font-size: 1rem;
+  }
+}

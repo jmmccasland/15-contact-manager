@@ -1,0 +1,32 @@
+// LAYOUT STYLES
+.app {
+  display: flex;
+  min-width: calc(100vw - 1rem - 1rem);
+}
+
+.main {
+  flex: 1;
+  padding: 1rem;
+
+}
+
+
+// SIDEBAR
+
+.sidebar {
+  position: relative;
+  flex-basis: 20%;
+  min-width: 10rem;
+  height: 100vh;
+  background: $c-cornflowerblue;
+  box-shadow: 0.2rem 0.2rem 0.4rem $c-shadow;
+
+  &__header {
+    margin: 0;
+    padding: 0.5rem 1rem;
+    background: $c-aliceblue;
+    font-size: 1.5rem;
+    box-shadow: 0 10px 2px 10px 0 $c-shadow;
+  }
+
+}
