@@ -28,5 +28,19 @@
     font-size: 1.5rem;
     box-shadow: 0 10px 2px 10px 0 $c-shadow;
   }
+}
 
+
+// GRID
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  &__item {
+    flex-basis: calc(100% / 3 - 1rem - 1rem);
+    flex-grow: 1;
+    margin: 1rem;
+  }
 }

@@ -8,11 +8,13 @@
 
 
 // COLORS
+$c-white: #fefefe;
 $c-aliceblue: #e6f4fd;
 $c-cornflowerblue: #44b0f1;
 $c-darkseagreen: #69c37d;
 $c-tomato: #ee3f41;
 $c-whitesmoke: #e0e0e0;
+$c-grey: #b4c3c8;
 $c-shadow: rgba(0, 0, 0, 0.2);
 
 
@@ -20,3 +22,34 @@ $c-shadow: rgba(0, 0, 0, 0.2);
 @import 'resets';
 @import 'layout';
 @import 'contact';
+
+// Card Styles
+
+.card {
+  border: 0.1rem solid $c-grey;
+  border-radius: 0.3rem;
+  background: $c-white;
+
+  &-info {
+    padding: 1rem;
+
+    &__full-name {
+      margin: 0;
+    }
+
+    > * + * {
+      margin: 1rem 0 0;
+    }
+  }
+
+  &__delete {
+    width: 100%;
+    height: 3rem;
+    margin: 0;
+    border: 0;
+    outline: none;
+    background: $c-tomato;
+    color: $c-whitesmoke;
+    font-size: 1rem;
+  }
+}
