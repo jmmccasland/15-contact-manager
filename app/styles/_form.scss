@@ -29,6 +29,7 @@
     border-bottom: 0.1rem solid $c-grey;
     outline: none;
     background: $c-aliceblue;
+    line-height: 2rem;
 
     &:focus {
       border-bottom: 0.3rem solid lighten($c-darkseagreen, 10%);
