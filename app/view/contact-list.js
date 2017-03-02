@@ -4,17 +4,19 @@ class ItemView {
     this.store = store;
 
     this.el = document.createElement('div');
-    this.el.classList.add('card');
+    this.el.classList.add('grid__item');
     this.el.innerHTML = `
-    <div class="card-info">
-      <h2 class="card-info__full-name"></h2>
-      <p class="card-info__street">123 Drury Lane</p>
-      <p><span class="card-info__city">City</span>, <span class="card-info__state">State</span></p>
-    </div><!-- /.card-info -->
+      <div class="card">
+        <div class="card-info">
+          <h2 class="card-info__full-name"><span class="card-info__last-name">Last</span>, <span class="card__first-name">First</span></h2>
+          <p class="card-info__street">123 Drury Lane</p>
+          <p><span class="card-info__city">City</span>, <span class="card-info__state">State</span></p>
+        </div><!-- /.card-info -->
 
-    <div class="action-bar">
-      <button class="button card__delete">Delete</button>
-    </div><!-- /.action-bar -->`;
+        <div class="action-bar">
+          <button class="button card__delete">Delete</button>
+        </div><!-- /.action-bar -->
+      </div><!-- /.card -->`;
   }
 
 

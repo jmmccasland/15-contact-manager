@@ -8,6 +8,11 @@ export default function(state, action) {
       return {
         contacts: [...state.contacts, action.data],
       };
+    case 'CONTACT@REMOVE':
+      return {
+        ...state,
+        contacts: state.contacts.filter((contact) => contact._id !== action._id),
+      };
     default:
       return state || { contacts: [] };
   }
