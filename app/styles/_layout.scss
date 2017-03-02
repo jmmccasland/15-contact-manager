@@ -7,16 +7,16 @@
 .main {
   flex: 1;
   padding: 1rem;
-
+  margin-left: 15rem;
 }
 
 
 // SIDEBAR
 
 .sidebar {
-  position: relative;
-  flex-basis: 20%;
-  min-width: 10rem;
+  position: fixed;
+  width: 15rem;
+  // min-width: 10rem;
   height: 100vh;
   background: $c-cornflowerblue;
   box-shadow: 0.2rem 0.2rem 0.4rem $c-shadow;
