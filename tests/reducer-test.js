@@ -92,5 +92,14 @@ module('reducer', () => {
     assert.deepEqual(reducer(startingStateOne, actionOne), expectedResultOne);
   });
 
+  // Test 11
+  test ('CONTACT@REMOVE: it can remove a single item that doesnt exist from a list ', (assert) => {
+    const startingStateOne = { ...defaultState, contacts: [contactOne, contactTwo] };
+    const actionOne = { type: 'CONTACT@REMOVE', id: 9 };
+    const expectedResultOne = { contacts: [contactOne, contactTwo] };
+
+    assert.deepEqual(reducer(startingStateOne, actionOne), expectedResultOne);
+  });
+
 
 });
