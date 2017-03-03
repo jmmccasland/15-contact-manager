@@ -9,10 +9,7 @@ export default function(state, action) {
         contacts: [...state.contacts, action.data],
       };
     case 'CONTACT@REMOVE':
-      return {
-        ...state,
-        contacts: state.contacts.filter((contact) => contact._id !== action._id),
-      };
+      return { contacts: state.contacts.filter(curr => curr.id !== action.id) };
     default:
       return state || { contacts: [] };
   }

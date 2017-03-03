@@ -8,13 +8,13 @@ const defaultState = Object.freeze({
 const contactOne = {
   firstName: 'John',
   lastName: 'Cena',
-  _id: '1234',
+  id: 1,
 }
 
 const contactTwo = {
   firstName: 'Angelina',
   lastName: 'Jo Lee',
-  _id: 'abcd',
+  id: 2,
 }
 
 
@@ -77,8 +77,17 @@ module('reducer', () => {
   // Test 9
   test ('CONTACT@REMOVE: it can remove the only item from a list', (assert) => {
     const startingStateOne = { contacts: [contactOne] };
-    const actionOne = { type: 'CONTACT@REMOVE', id: contactOne._id };
+    const actionOne = { type: 'CONTACT@REMOVE', id: contactOne.id };
     const expectedResultOne = { contacts: [] };
+
+    assert.deepEqual(reducer(startingStateOne, actionOne), expectedResultOne);
+  });
+
+  // Test 10
+  test ('CONTACT@REMOVE: it can remove a single item from a list', (assert) => {
+    const startingStateOne = { ...defaultState, contacts: [contactOne, contactTwo] };
+    const actionOne = { type: 'CONTACT@REMOVE', id: contactOne.id };
+    const expectedResultOne = { contacts: [contactTwo] };
 
     assert.deepEqual(reducer(startingStateOne, actionOne), expectedResultOne);
   });
