@@ -1,3 +1,5 @@
+import { remove } from '../actions';
+
 class ItemView {
   constructor(contact, store) {
     this.contact = contact;
@@ -19,6 +21,11 @@ class ItemView {
       </div><!-- /.card -->`;
   }
 
+  mounted() {
+    this.el.querySelector('.card__delete').addEventListener('click', () => {
+      this.store.dispatch(remove(this.contact.id));
+    });
+  }
 
   // might need to change values of innerText
   render() {
@@ -28,7 +35,6 @@ class ItemView {
     this.el.querySelector('.card-info__state').innerText = this.contact.state;
   }
 }
-
 
 
 export default class ContactListView {
@@ -44,11 +50,12 @@ export default class ContactListView {
   }
 
   render() {
-    this.el.innerHTML = "";
+    this.el.innerHTML = '';
     const contacts = this.store.getState().contacts;
     contacts.forEach((contact) => {
       const view = new ItemView(contact, this.store);
       view.render();
+      view.mounted();
 
       this.el.appendChild(view.el);
     });

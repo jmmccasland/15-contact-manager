@@ -1,3 +1,5 @@
+import { create } from '../actions';
+
 export default class ContactFormView {
   constructor(el, store) {
     this.el = el;
@@ -7,16 +9,16 @@ export default class ContactFormView {
   mounted() {
     this.el.addEventListener('submit', (ev) => {
       ev.preventDefault();
-      const data = {
-        // Lookup input values here
+
+      this.store.dispatch(create({
         firstName: this.el.querySelector('.contact-form__firstname').value,
         lastName: this.el.querySelector('.contact-form__lastname').value,
         street: this.el.querySelector('.contact-form__street').value,
         city: this.el.querySelector('.contact-form__city').value,
         state: this.el.querySelector('.contact-form__state').value,
-      };
+      }));
 
-      this.store.dispatch({ type: 'CONTACT@CREATE', data });
+      // this.store.dispatch({ type: 'CONTACT@CREATE', data });
     });
   }
 }
