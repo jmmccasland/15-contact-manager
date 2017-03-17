@@ -1,5 +1,6 @@
 import ContactFormView from '../view/contact-form';
 import ContactListView from '../view/contact-list';
+import { findAll } from '../actions';
 
 export default class AppController {
   constructor(el, store) {
@@ -15,8 +16,9 @@ export default class AppController {
       localStorage.contacts = JSON.stringify(this.store.getState().contacts);
     });
 
-      this.ContactFormView.mounted();
-      this.ContactListView.mounted();
+    this.ContactFormView.mounted();
+    this.ContactListView.mounted();
+
 
     // Figure out old data
     this.store.dispatch({
@@ -24,5 +26,6 @@ export default class AppController {
       data: JSON.parse(localStorage.contacts || '[]')
     });
 
+    this.store.dispatch(findAll());
   }
 }
